@@ -975,5 +975,8 @@ TEST(Inverse, inverse_throw) {
 
 int main() {
   ::testing::InitGoogleTest();
+#ifdef __APPLE__
+  free(__cxxabiv1::__cxa_get_globals());
+#endif
   return RUN_ALL_TESTS();
 }
